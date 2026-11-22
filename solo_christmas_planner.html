@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozy Solo Christmas 🎄✨ - ฉลองคริสต์มาสคนเดียวให้อบอุ่นหัวใจ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Mali:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream-bg: #FFF9F0;
+            --paper-bg: #FFFDF9;
+            --berry-red: #E06D6D;
+            --berry-soft: #FADBD8;
+            --pine-green: #6B9E78;
+            --pine-soft: #D4EFDF;
+            --ginger-brown: #8D5B4C;
+            --champagne-gold: #E5B95C;
+            --text-dark: #4A3531;
+        }
+
+        body {
+            font-family: 'Mali', 'Prompt', cursive, sans-serif;
+            background-color: var(--cream-bg);
+            background-image: 
+                radial-gradient(#E5B95C 1px, transparent 1px),
+                radial-gradient(#E06D6D 1px, #FFF9F0 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+            color: var(--text-dark);
+            min-height: 100vh;
+            overflow-x: hidden;
+            transition: background-color 0.6s ease;
+        }
+
+        body.night-cozy {
+            background-color: #2B2129;
+            background-image: 
+                radial-gradient(rgba(229, 185, 92, 0.25) 1.5px, transparent 1.5px),
+                radial-gradient(rgba(224, 109, 109, 0.2) 1px, #2B2129 1px);
+            color: #FFF9F0;
+        }
+
+        .font-itim {
+            font-family: 'Itim', cursive, sans-serif;
+        }
+
+        /* Scrapbook Paper Card */
+        .scrapbook-card {
+            background-color: var(--paper-bg);
+            border: 2px solid #F0E4D7;
+            box-shadow: 0 10px 25px -5px rgba(141, 91, 76, 0.12), 0 4px 10px -2px rgba(141, 91, 76, 0.06);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        body.night-cozy .scrapbook-card {
+            background-color: #3A2D37;
+            border-color: #544250;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Washi Tape Effects */
+        .washi-tape {
+            position: absolute;
+            height: 26px;
+            width: 95px;
+            opacity: 0.85;
+            z-index: 10;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            pointer-events: none;
+        }
+        .tape-red-stripe {
+            background: repeating-linear-gradient(45deg, #F5B7B1, #F5B7B1 8px, #FFFDF9 8px, #FFFDF9 16px);
+        }
+        .tape-green-dots {
+            background-color: #C8E6C9;
+            background-image: radial-gradient(#6B9E78 2px, transparent 2px);
+            background-size: 10px 10px;
+        }
+        .tape-gold {
+            background: repeating-linear-gradient(-45deg, #F9E79F, #F9E79F 6px, #FDEBD0 6px, #FDEBD0 12px);
+        }
+
+        /* Fairy Lights Top Bar */
+        .fairy-lights-wire {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: 0 10px;
+            border-top: 3px solid #7D665E;
+            border-radius: 50% 50% 0 0 / 10px 10px 0 0;
+            position: relative;
+            z-index: 40;
+        }
+        .bulb-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .bulb-cap {
+            width: 8px;
+            height: 6px;
+            background: #5D4037;
+            border-radius: 2px 2px 0 0;
+        }
+        .bulb {
+            width: 14px;
+            height: 20px;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: twinkle 1.8s infinite alternate ease-in-out;
+        }
+        .bulb.off {
+            animation: none !important;
+            opacity: 0.35;
+            box-shadow: none !important;
+        }
+        .bulb-red { background: #FF7675; box-shadow: 0 0 12px 3px rgba(255, 118, 117, 0.75); }
+        .bulb-gold { background: #FFEAA7; box-shadow: 0 0 12px 3px rgba(255, 234, 167, 0.85); animation-delay: 0.4s; }
+        .bulb-green { background: #55EFC4; box-shadow: 0 0 12px 3px rgba(85, 239, 196, 0.7); animation-delay: 0.8s; }
+        .bulb-pink { background: #FD79A8; box-shadow: 0 0 12px 3px rgba(253, 121, 168, 0.75); animation-delay: 1.2s; }
+
+        @keyframes twinkle {
+            0% { opacity: 0.55; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1.08); }
+        }
+
+        /* Gift Box Shake & Bounce */
+        @keyframes giftWiggle {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            20% { transform: rotate(-8deg) scale(1.05); }
+            40% { transform: rotate(8deg) scale(1.05); }
+            60% { transform: rotate(-6deg) scale(1.08); }
+            80% { transform: rotate(6deg) scale(1.05); }
+        }
+        .animate-gift-shake {
+            animation: giftWiggle 0.6s ease-in-out;
+        }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-6px) rotate(2deg); }
+        }
+        .mascot-float {
+            animation: floatSlow 3.2s ease-in-out infinite;
+        }
+
+        /* Cinema Ticket Pop & Popcorn Bounce */
+        @keyframes ticketFlipIn {
+            0% { transform: scale(0.9) rotate(-2deg); opacity: 0.4; }
+            60% { transform: scale(1.03) rotate(1deg); opacity: 1; }
+            100% { transform: scale(1) rotate(0deg); opacity: 1; }
+        }
+        .animate-ticket-pop {
+            animation: ticketFlipIn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes popcornBounce {
+            0%, 100% { transform: translateY(0) scale(1); }
+            35% { transform: translateY(-10px) scale(1.15) rotate(-8deg); }
+            70% { transform: translateY(-4px) scale(1.08) rotate(8deg); }
+        }
+        .animate-popcorn {
+            animation: popcornBounce 0.5s ease-in-out;
+        }
+
+        /* Vintage Cinema Ticket Stub */
+        .cinema-ticket {
+            background: linear-gradient(135deg, #FFFDF8 0%, #FFF4E4 100%);
+            border: 2px dashed #D99B52;
+            position: relative;
+        }
+        body.night-cozy .cinema-ticket {
+            background: linear-gradient(135deg, #463643 0%, #382B36 100%);
+            border-color: #E5B95C;
+            color: #FFF9F0;
+        }
+        .cinema-ticket::before,
+        .cinema-ticket::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 22px;
+            height: 22px;
+            background-color: var(--paper-bg);
+            border-radius: 9999px;
+            transform: translateY(-50%);
+            border: 2px dashed #D99B52;
+        }
+        body.night-cozy .cinema-ticket::before,
+        body.night-cozy .cinema-ticket::after {
+            background-color: #3A2D37;
+            border-color: #E5B95C;
+        }
+        .cinema-ticket::before { left: -13px; clip-path: inset(0 0 0 50%); }
+        .cinema-ticket::after { right: -13px; clip-path: inset(0 50% 0 0); }
+
+        /* Lined Notebook Paper for Checklist */
+        .notebook-lines {
+            background-image: linear-gradient(transparent 95%, #F2E6D8 95%);
+            background-size: 100% 2.6rem;
+        }
+        body.night-cozy .notebook-lines {
+            background-image: linear-gradient(transparent 95%, #4D3C49 95%);
+        }
+
+        /* Postcard Stamp Border */
+        .stamp-border {
+            background: radial-gradient(transparent 0px, transparent 3px, #FFFDF9 3px, #FFFDF9);
+            background-size: 12px 12px;
+            background-position: -6px -6px;
+            padding: 6px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        /* Click Sparkle Particle */
+        .click-sparkle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            font-size: 18px;
+            animation: sparklePop 0.8s ease-out forwards;
+        }
+        @keyframes sparklePop {
+            0% { transform: translate(-50%, -50%) scale(0.4) rotate(0deg); opacity: 1; }
+            100% { transform: translate(-50%, -120%) scale(1.3) rotate(45deg); opacity: 0; }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #FFF9F0; }
+        ::-webkit-scrollbar-thumb { background: #E06D6D; border-radius: 99px; }
+    </style>
+</head>
+<body class="pb-20 selection:bg-rose-200 selection:text-rose-900">
+
+    <!-- Snowfall Canvas -->
+    <canvas id="snow-canvas" class="fixed inset-0 pointer-events-none z-30"></canvas>
+
+    <!-- Fairy Lights Header Wire -->
+    <div class="w-full overflow-hidden pt-1 pb-2">
+        <div id="fairy-lights-container" class="fairy-lights-wire max-w-6xl mx-auto"></div>
+    </div>
+
+    <!-- Top Quick Atmosphere Bar -->
+    <div class="max-w-5xl mx-auto px-4 pt-2 flex flex-wrap items-center justify-between gap-2 relative z-20">
+        <div class="flex items-center gap-2 bg-white/80 dark:bg-stone-800/80 backdrop-blur-sm px-3.5 py-1.5 rounded-full border border-amber-200 shadow-sm text-xs font-medium text-amber-900">
+            <span>📅 25 ธันวาคม • คืนคริสต์มาสแสนอบอุ่น</span>
+        </div>
+        <div class="flex items-center gap-2">
+            <button onclick="toggleLights()" id="btn-lights" class="bg-amber-100 hover:bg-amber-200 text-amber-900 border border-amber-300 px-3 py-1.5 rounded-full text-xs font-semibold shadow-sm transition active:scale-95 flex items-center gap-1">
+                💡 ไฟประดับ: เปิด
+            </button>
+            <button onclick="toggleSnow()" id="btn-snow" class="bg-sky-100 hover:bg-sky-200 text-sky-900 border border-sky-300 px-3 py-1.5 rounded-full text-xs font-semibold shadow-sm transition active:scale-95 flex items-center gap-1">
+                ❄️ หิมะตก: เปิด
+            </button>
+            <button onclick="toggleCozyMode()" id="btn-theme" class="bg-rose-100 hover:bg-rose-200 text-rose-900 border border-rose-300 px-3 py-1.5 rounded-full text-xs font-semibold shadow-sm transition active:scale-95 flex items-center gap-1">
+                🕯️ โหมดกลางคืนอบอุ่น
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero & Mascot Section -->
+    <header class="max-w-4xl mx-auto px-4 pt-6 pb-8 text-center relative z-20">
+        <div class="inline-flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
+            <!-- Cute SVG Reindeer Mascot -->
+            <div onclick="petMascot()" class="mascot-float cursor-pointer group relative" title="จิ้มน้องกวางเรนเดียร์สิ!">
+                <svg width="115" height="115" viewBox="0 0 120 120" class="drop-shadow-md transition-transform group-hover:scale-105">
+                    <!-- Antlers -->
+                    <path d="M42 35 C35 18, 22 18, 20 10 M33 22 L24 25 M37 28 L44 20" stroke="#795548" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+                    <path d="M78 35 C85 18, 98 18, 100 10 M87 22 L96 25 M83 28 L76 20" stroke="#795548" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+                    <!-- Ears -->
+                    <ellipse cx="32" cy="44" rx="10" ry="6" transform="rotate(-25 32 44)" fill="#A1887F"/>
+                    <ellipse cx="88" cy="44" rx="10" ry="6" transform="rotate(25 88 44)" fill="#A1887F"/>
+                    <!-- Santa Hat -->
+                    <path d="M44 34 Q60 8 82 32 Z" fill="#E06D6D"/>
+                    <circle cx="84" cy="32" r="6" fill="#FFFFFF"/>
+                    <rect x="41" y="30" width="38" height="8" rx="4" fill="#FFFFFF"/>
+                    <!-- Face -->
+                    <circle cx="60" cy="64" r="30" fill="#BC8F73"/>
+                    <ellipse cx="60" cy="72" rx="18" ry="13" fill="#E6C3A5"/>
+                    <!-- Eyes -->
+                    <circle cx="48" cy="58" r="3.5" fill="#3E2723"/>
+                    <circle cx="49" cy="57" r="1.2" fill="#FFFFFF"/>
+                    <circle cx="72" cy="58" r="3.5" fill="#3E2723"/>
+                    <circle cx="73" cy="57" r="1.2" fill="#FFFFFF"/>
+                    <!-- Rosy Cheeks -->
+                    <ellipse cx="41" cy="67" rx="5" ry="3" fill="#FF8A80" opacity="0.7"/>
+                    <ellipse cx="79" cy="67" rx="5" ry="3" fill="#FF8A80" opacity="0.7"/>
+                    <!-- Red Shiny Nose -->
+                    <circle cx="60" cy="67" r="6.5" fill="#E53935"/>
+                    <circle cx="58" cy="65" r="2" fill="#FFCDD2"/>
+                    <!-- Cute Smile -->
+                    <path d="M54 75 Q60 81 66 75" stroke="#4E342E" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                    <!-- Cozy Scarf -->
+                    <path d="M36 88 Q60 98 84 88 L86 98 Q60 108 34 98 Z" fill="#6B9E78"/>
+                    <path d="M68 94 L72 112 L82 110 L77 92 Z" fill="#6B9E78"/>
+                    <line x1="72" y1="100" x2="79" y2="99" stroke="#F9E79F" stroke-width="2.5"/>
+                    <line x1="73" y1="105" x2="80" y2="104" stroke="#E06D6D" stroke-width="2.5"/>
+                </svg>
+                <span class="absolute -bottom-1 right-0 bg-amber-300 text-amber-950 text-[10px] font-bold px-2 py-0.5 rounded-full shadow">จิ้มฉันสิ!</span>
+            </div>
+
+            <!-- Title & Speech Bubble -->
+            <div class="text-center md:text-left">
+                <div class="inline-block bg-rose-100 text-rose-800 border border-rose-200 px-3 py-1 rounded-full text-xs font-bold mb-2">
+                    🎄 Solo Christmas Scrapbook
+                </div>
+                <h1 class="font-itim text-3xl sm:text-4xl md:text-5xl font-bold text-[#C05656] drop-shadow-sm tracking-wide">
+                    คืนคริสต์มาสแสนวิเศษของฉัน
+                </h1>
+                <!-- Mascot Speech Bubble -->
+                <div class="mt-3 inline-block bg-white/95 text-[#4A3531] px-4 py-2 rounded-2xl rounded-tl-none border-2 border-amber-200 shadow-sm text-sm max-w-md">
+                    <span class="font-bold text-rose-500">น้องรูดอล์ฟ:</span> 
+                    <span id="mascot-speech">ยินดีต้อนรับสู่คืนคริสต์มาสแสนอบอุ่นนะ! วันนี้เรามาสร้างความสุขเล็กๆ ให้ตัวเองกันเถอะ ✨</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Scrapbook Grid -->
+    <main class="max-w-5xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-8 relative z-20">
+
+        <!-- Left Column (7 Cols): Gift Gacha & Cozy Checklist -->
+        <div class="lg:col-span-7 space-y-8">
+
+            <!-- 1. Christmas Gift Gacha Card -->
+            <section class="scrapbook-card rounded-3xl p-6 sm:p-8">
+                <!-- Decorative Washi Tape -->
+                <div class="washi-tape tape-red-stripe -top-3 left-8 -rotate-3 rounded-sm"></div>
+                <div class="washi-tape tape-green-dots -top-3 right-8 rotate-3 rounded-sm"></div>
+
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5">
+                    <div>
+                        <h2 class="font-itim text-2xl font-bold text-[#C05656] flex items-center gap-2">
+                            🎁 กล่องของขวัญสุ่มไอเดียคืนนี้
+                        </h2>
+                        <p class="text-xs opacity-75">ไม่รู้จะทำอะไรดี? ลองเขย่ากล่องของขวัญดูสิ!</p>
+                    </div>
+                    <select id="category-select" class="bg-[#FFF5E4] text-[#4A3531] border-2 border-[#E5B95C] rounded-2xl px-3.5 py-2 text-xs sm:text-sm font-semibold focus:outline-none cursor-pointer shadow-sm">
+                        <option value="all">✨ ทุกหมวดหมู่ (ทั้งหมด)</option>
+                        <option value="cozy">🧸 สายชิลล์อบอุ่นในห้อง</option>
+                        <option value="soulful">🎨 สายฮีลใจ & สร้างสรรค์</option>
+                        <option value="gamer">🎮 สายเกมเมอร์ & โลกออนไลน์</option>
+                        <option value="solo">🧣 สายออกไปเที่ยวคนเดียว</option>
+                    </select>
+                </div>
+
+                <!-- Gift Box Stage -->
+                <div class="bg-gradient-to-b from-[#FFF3E2] to-[#FCE4EC]/60 rounded-2xl p-6 border-2 border-dashed border-[#E06D6D]/40 text-center relative overflow-hidden">
+                    <!-- Corner Stickers -->
+                    <span class="absolute top-2 left-3 text-xl opacity-80 select-none">🍬</span>
+                    <span class="absolute bottom-2 right-3 text-xl opacity-80 select-none">🎄</span>
+
+                    <!-- Interactive Gift Box SVG -->
+                    <div id="gift-box-visual" onclick="openGiftBox()" class="mx-auto w-24 h-24 cursor-pointer select-none flex items-center justify-center mb-3 transition-transform hover:scale-105" title="คลิกเพื่อเปิดกล่องของขวัญ!">
+                        <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-md">
+                            <!-- Box Body -->
+                            <rect x="18" y="42" width="64" height="48" rx="8" fill="#E06D6D"/>
+                            <rect x="44" y="42" width="12" height="48" fill="#F9E79F"/>
+                            <!-- Box Lid -->
+                            <rect x="14" y="30" width="72" height="14" rx="5" fill="#C95353"/>
+                            <rect x="44" y="30" width="12" height="14" fill="#F4D03F"/>
+                            <!-- Ribbon Bow -->
+                            <path d="M50 30 C35 12, 20 22, 36 30 Z" fill="#F9E79F" stroke="#E5B95C" stroke-width="2"/>
+                            <path d="M50 30 C65 12, 80 22, 64 30 Z" fill="#F9E79F" stroke="#E5B95C" stroke-width="2"/>
+                            <circle cx="50" cy="30" r="5" fill="#F4D03F"/>
+                        </svg>
+                    </div>
+
+                    <!-- Result Content -->
+                    <div id="gacha-result-box" class="min-h-[96px] flex flex-col items-center justify-center px-2">
+                        <span id="gacha-tag" class="inline-block bg-[#6B9E78] text-white text-xs font-bold px-3 py-0.5 rounded-full mb-2">
+                            พร้อมเปิดของขวัญแล้ว!
+                        </span>
+                        <h3 id="gacha-title" class="font-itim text-xl sm:text-2xl font-bold text-[#4A3531] mb-1">
+                            กดที่กล่องของขวัญ หรือปุ่มด้านล่างเลย
+                        </h3>
+                        <p id="gacha-desc" class="text-xs sm:text-sm text-[#6D524C] max-w-md">
+                            มีไอเดียน่ารักๆ รอให้คุณสุ่มไปเติมเต็มค่ำคืนนี้อยู่เพียบเลย!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="mt-5 flex flex-col sm:flex-row gap-3">
+                    <button onclick="openGiftBox()" class="flex-1 bg-[#E06D6D] hover:bg-[#D15858] text-white font-bold py-3 px-5 rounded-2xl shadow-md shadow-rose-200 transition transform active:scale-95 flex items-center justify-center gap-2 text-sm sm:text-base">
+                        <span>🎁 เขย่าและเปิดกล่องของขวัญ</span>
+                    </button>
+                    <button id="btn-add-gacha" onclick="addGachaToChecklist()" disabled class="bg-[#6B9E78] hover:bg-[#5A8B66] disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold py-3 px-5 rounded-2xl shadow-md shadow-emerald-100 transition transform active:scale-95 flex items-center justify-center gap-1.5 text-sm sm:text-base">
+                        <span>➕ เพิ่มลงลิสต์ความสุข</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- 1.5 Cozy Christmas Cinema (Movie Randomizer) -->
+            <section class="scrapbook-card rounded-3xl p-6 sm:p-8">
+                <div class="washi-tape tape-gold -top-3 left-10 -rotate-2 rounded-sm"></div>
+                <div class="washi-tape tape-red-stripe -top-3 right-10 rotate-2 rounded-sm"></div>
+
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                    <div>
+                        <div class="inline-flex items-center gap-1.5 bg-amber-100 text-amber-900 border border-amber-300 px-2.5 py-0.5 rounded-full text-[11px] font-bold mb-1">
+                            <span>🎟️ CHRISTMAS CINEMA TICKET</span>
+                        </div>
+                        <h2 class="font-itim text-2xl font-bold text-[#8D5B4C] flex items-center gap-2">
+                            🎬 โรงหนังคริสต์มาสส่วนตัว
+                        </h2>
+                        <p class="text-xs opacity-75">ซุกตัวใต้ผ้าห่มอุ่นๆ แล้วสุ่มหนังคริสต์มาสดูคืนนี้กันเถอะ!</p>
+                    </div>
+                    <div id="popcorn-icon" class="text-3xl sm:text-4xl select-none flex items-center gap-1 bg-[#FFF5E4] px-3 py-1.5 rounded-2xl border border-amber-200 shadow-sm">
+                        <span>🍿</span><span class="text-2xl">☕</span>
+                    </div>
+                </div>
+
+                <!-- Genre Filter Buttons -->
+                <div class="flex flex-wrap gap-1.5 mb-5" id="movie-genre-filters">
+                    <button onclick="setMovieGenre('all')" data-genre="all" class="movie-filter-btn bg-[#E06D6D] text-white font-bold px-3 py-1.5 rounded-xl text-xs shadow-sm transition active:scale-95">
+                        ✨ ทั้งหมด
+                    </button>
+                    <button onclick="setMovieGenre('romcom')" data-genre="romcom" class="movie-filter-btn bg-[#FFF5E4] text-[#4A3531] hover:bg-amber-100 border border-amber-200 font-semibold px-3 py-1.5 rounded-xl text-xs transition active:scale-95">
+                        💕 อบอุ่นหัวใจ / รอมคอม
+                    </button>
+                    <button onclick="setMovieGenre('animation')" data-genre="animation" class="movie-filter-btn bg-[#FFF5E4] text-[#4A3531] hover:bg-amber-100 border border-amber-200 font-semibold px-3 py-1.5 rounded-xl text-xs transition active:scale-95">
+                        🧚 อนิเมชั่น / แฟนตาซี
+                    </button>
+                    <button onclick="setMovieGenre('classic')" data-genre="classic" class="movie-filter-btn bg-[#FFF5E4] text-[#4A3531] hover:bg-amber-100 border border-amber-200 font-semibold px-3 py-1.5 rounded-xl text-xs transition active:scale-95">
+                        😂 ตลกเบาสมอง / คลาสสิก
+                    </button>
+                </div>
+
+                <!-- Vintage Cinema Ticket Result Display -->
+                <div id="cinema-ticket-card" class="cinema-ticket rounded-2xl p-5 sm:p-6 shadow-sm transition-all">
+                    <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4">
+                        <!-- Movie Cute Illustration Badge -->
+                        <div id="movie-poster-icon" class="w-20 h-24 rounded-2xl bg-gradient-to-br from-[#FADBD8] to-[#F9E79F] border-2 border-white shadow-md flex flex-col items-center justify-center shrink-0 select-none">
+                            <span class="text-4xl">🎞️</span>
+                            <span class="text-[10px] font-bold text-[#8D5B4C] mt-1">ADMIT ONE</span>
+                        </div>
+
+                        <!-- Movie Details -->
+                        <div class="flex-1 text-center sm:text-left">
+                            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 mb-1.5">
+                                <span id="movie-genre-badge" class="bg-[#6B9E78] text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full">
+                                    พร้อมฉายรอบพิเศษ
+                                </span>
+                                <span id="movie-year-badge" class="bg-amber-200/80 text-amber-950 text-[11px] font-bold px-2.5 py-0.5 rounded-full">
+                                    📅 รอบดึกคืนนี้
+                                </span>
+                            </div>
+
+                            <h3 id="movie-title" class="font-itim text-xl sm:text-2xl font-bold text-[#C05656] leading-snug">
+                                กดปุ่ม "สุ่มหนังดูคืนนี้" เพื่อรับตั๋วหนัง!
+                            </h3>
+                            <p id="movie-synopsis" class="text-xs sm:text-sm opacity-85 mt-1.5 leading-relaxed">
+                                คัดมาให้แล้ว 15 เรื่องสุดอบอุ่นและสนุกครบรส พร้อมเมนูของว่างคู่ใจให้คุณเลือกดูคนเดียวแบบฟินที่สุด
+                            </p>
+
+                            <!-- Snack Pairing Box -->
+                            <div class="mt-3 inline-flex items-center gap-2 bg-white/80 dark:bg-stone-800/70 border border-amber-200 px-3 py-1.5 rounded-xl text-xs font-semibold text-[#8D5B4C]">
+                                <span>🍪 ของว่างแนะนำ:</span>
+                                <span id="movie-snack" class="text-[#C05656]">โกโก้ร้อนมาร์ชเมลโลว์ & คุกกี้เนยสด</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cinema Action Buttons -->
+                <div class="mt-5 flex flex-col sm:flex-row gap-3">
+                    <button onclick="spinChristmasMovie()" class="flex-1 bg-[#8D5B4C] hover:bg-[#75493C] text-[#FFF9F0] font-bold py-3 px-5 rounded-2xl shadow-md transition transform active:scale-95 flex items-center justify-center gap-2 text-sm sm:text-base">
+                        <span>สุ่มหนังดูคืนนี้ 🍿</span>
+                    </button>
+                    <button id="btn-add-movie" onclick="addMovieToChecklist()" disabled class="bg-[#E06D6D] hover:bg-[#D15858] disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold py-3 px-5 rounded-2xl shadow-md shadow-rose-200 transition transform active:scale-95 flex items-center justify-center gap-1.5 text-sm sm:text-base">
+                        <span>เพิ่มเข้าลิสต์ความสุขคืนนี้ 🎬</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- 2. My Cozy Christmas Checklist & Joy Meter -->
+            <section class="scrapbook-card rounded-3xl p-6 sm:p-8">
+                <div class="washi-tape tape-gold -top-3 left-1/2 -translate-x-1/2 rotate-1 rounded-sm"></div>
+
+                <div class="flex items-center justify-between mb-3">
+                    <h2 class="font-itim text-2xl font-bold text-[#528260] flex items-center gap-2">
+                        📝 ลิสต์ความสุขคืนนี้ของฉัน
+                    </h2>
+                    <span class="text-2xl select-none">🧦</span>
+                </div>
+
+                <!-- Christmas Joy Meter -->
+                <div class="bg-[#FFF4E6] rounded-2xl p-4 border border-[#F3D9B1] mb-5">
+                    <div class="flex justify-between items-center text-xs font-bold text-[#8D5B4C] mb-1.5">
+                        <span id="joy-status-label">🌟 ระดับความสุขคริสต์มาส: เริ่มต้นความอบอุ่น</span>
+                        <span id="joy-percentage" class="bg-amber-200 text-amber-900 px-2.5 py-0.5 rounded-full">0%</span>
+                    </div>
+                    <div class="w-full h-4 bg-white rounded-full overflow-hidden border border-amber-200 p-0.5">
+                        <div id="joy-bar" class="h-full bg-gradient-to-r from-[#F5B7B1] via-[#E06D6D] to-[#E5B95C] rounded-full transition-all duration-500 ease-out" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <!-- Add Custom Activity Input -->
+                <div class="flex gap-2 mb-5">
+                    <input type="text" id="new-task-input" placeholder="เขียนสิ่งที่อยากทำเพิ่ม เช่น จุดเทียนหอม, กินคุกกี้..." 
+                        onkeypress="if(event.key==='Enter') addCustomTask()"
+                        class="flex-1 bg-white text-[#4A3531] border-2 border-[#E8D8C8] focus:border-[#6B9E78] rounded-2xl px-4 py-2.5 text-sm focus:outline-none shadow-inner">
+                    <button onclick="addCustomTask()" class="bg-[#6B9E78] hover:bg-[#5A8B66] text-white font-bold px-5 py-2.5 rounded-2xl text-sm shadow-sm transition active:scale-95">
+                        เพิ่ม ✨
+                    </button>
+                </div>
+
+                <!-- Notebook Checklist -->
+                <div class="notebook-lines rounded-2xl p-2 min-h-[200px] max-h-[340px] overflow-y-auto">
+                    <ul id="checklist-container" class="space-y-2.5">
+                        <!-- Checklist Items Rendered by JS -->
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Right Column (5 Cols): Music Box & Dear Future Me Postcard -->
+        <div class="lg:col-span-5 space-y-8">
+
+            <!-- 3. Cozy Corner & Music Box Player -->
+            <section class="scrapbook-card rounded-3xl p-6">
+                <div class="washi-tape tape-green-dots -top-3 left-6 -rotate-6 rounded-sm"></div>
+
+                <div class="flex items-center justify-between mb-3">
+                    <h2 class="font-itim text-2xl font-bold text-[#8D5B4C] flex items-center gap-2">
+                        🎵 กล่องดนตรีคริสต์มาส
+                    </h2>
+                    <span class="text-xl">🔔</span>
+                </div>
+                <p class="text-xs opacity-75 mb-4">เปิดเสียงเพลงกล่องดนตรีนุ่มๆ คลอไปกับการวางแผนคืนนี้ (เล่นเสียงจริงในเบราว์เซอร์!)</p>
+
+                <!-- Cute Retro Music Box Widget -->
+                <div class="bg-gradient-to-br from-[#FDEBD0] to-[#FADBD8] rounded-2xl p-4 border-2 border-[#E5B95C]/50 text-[#4A3531] shadow-inner">
+                    <div class="flex items-center gap-3.5 mb-4">
+                        <!-- Spinning Vinyl / Music Disc -->
+                        <div id="music-disc" class="w-14 h-14 rounded-full bg-[#4A3531] border-4 border-[#E5B95C] flex items-center justify-center shadow-md shrink-0">
+                            <div class="w-5 h-5 rounded-full bg-[#E06D6D] border-2 border-white"></div>
+                        </div>
+                        <div class="overflow-hidden">
+                            <div class="text-[11px] font-bold text-[#C05656] uppercase tracking-wider">Cozy Music Box</div>
+                            <div id="track-name" class="font-itim text-lg font-bold truncate">Jingle Bells (Music Box)</div>
+                            <div id="music-status" class="text-xs text-[#7D665E]">กดปุ่มเล่นเพื่อฟังเสียงกระดิ่งน่ารักๆ</div>
+                        </div>
+                    </div>
+
+                    <!-- Song Selector -->
+                    <div class="flex gap-2 mb-3">
+                        <button onclick="selectTrack(0)" id="track-btn-0" class="flex-1 py-1.5 px-2 rounded-xl text-xs font-bold bg-[#E06D6D] text-white shadow-sm transition">
+                            🔔 Jingle Bells
+                        </button>
+                        <button onclick="selectTrack(1)" id="track-btn-1" class="flex-1 py-1.5 px-2 rounded-xl text-xs font-bold bg-white/80 text-[#4A3531] hover:bg-white transition">
+                            🎄 We Wish You...
+                        </button>
+                    </div>
+
+                    <!-- Play / Stop & Chime Controls -->
+                    <div class="flex items-center gap-2">
+                        <button onclick="toggleMusicBox()" id="btn-play-music" class="flex-1 bg-[#4A3531] hover:bg-[#362623] text-[#FFF9F0] font-bold py-2.5 px-4 rounded-xl text-sm flex items-center justify-center gap-2 shadow transition active:scale-95">
+                            ▶️ เล่นกล่องดนตรี
+                        </button>
+                        <button onclick="playSleighBellsChime()" class="bg-amber-300 hover:bg-amber-400 text-amber-950 font-bold py-2.5 px-3.5 rounded-xl text-sm shadow transition active:scale-95" title="เขย่ากระดิ่งซานต้า">
+                            🛎️ กรุ๊งกริ๊ง
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Dear Future Me Postcard -->
+            <section class="scrapbook-card rounded-3xl p-6 relative">
+                <div class="washi-tape tape-red-stripe -top-3 right-6 rotate-6 rounded-sm"></div>
+
+                <!-- Postcard Header with Stamp -->
+                <div class="flex items-start justify-between gap-2 mb-3">
+                    <div>
+                        <h2 class="font-itim text-2xl font-bold text-[#C05656] flex items-center gap-1.5">
+                            💌 โปสการ์ดถึงตัวฉันปีหน้า
+                        </h2>
+                        <p class="text-xs opacity-75">เขียนความในใจ ขอบคุณตัวเอง หรือขอพรไว้เปิดอ่านปีหน้า</p>
+                    </div>
+
+                    <!-- Cute Christmas Tree Stamp -->
+                    <div class="stamp-border shrink-0">
+                        <div class="w-14 h-16 bg-[#D4EFDF] border border-[#6B9E78] flex flex-col items-center justify-center text-center p-1">
+                            <span class="text-2xl leading-none">🎄</span>
+                            <span class="text-[9px] font-bold text-[#3E6B4C] mt-1">XMAS 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sticker Picker for Postcard -->
+                <div class="mb-3">
+                    <span class="text-xs font-bold text-[#8D5B4C] block mb-1.5">เลือกสติกเกอร์แปะมุมการ์ด:</span>
+                    <div class="flex flex-wrap gap-1.5" id="sticker-selector">
+                        <button onclick="setPostcardSticker('🎅')" class="sticker-opt w-9 h-9 rounded-xl bg-[#FFF5E4] border-2 border-[#E06D6D] text-lg flex items-center justify-center hover:scale-110 transition">🎅</button>
+                        <button onclick="setPostcardSticker('⛄')" class="sticker-opt w-9 h-9 rounded-xl bg-[#FFF5E4] border border-amber-200 text-lg flex items-center justify-center hover:scale-110 transition">⛄</button>
+                        <button onclick="setPostcardSticker('🦌')" class="sticker-opt w-9 h-9 rounded-xl bg-[#FFF5E4] border border-amber-200 text-lg flex items-center justify-center hover:scale-110 transition">🦌</button>
+                        <button onclick="setPostcardSticker('🍪')" class="sticker-opt w-9 h-9 rounded-xl bg-[#FFF5E4] border border-amber-200 text-lg flex items-center justify-center hover:scale-110 transition">🍪</button>
+                        <button onclick="setPostcardSticker('🧦')" class="sticker-opt w-9 h-9 rounded-xl bg-[#FFF5E4] border border-amber-200 text-lg flex items-center justify-center hover:scale-110 transition">🧦</button>
+                        <button onclick="setPostcardSticker('⭐')" class="sticker-opt w-9 h-9 rounded-xl bg-[#FFF5E4] border border-amber-200 text-lg flex items-center justify-center hover:scale-110 transition">⭐</button>
+                    </div>
+                </div>
+
+                <!-- Postcard Writing Area -->
+                <div class="relative bg-[#FFFDF7] rounded-2xl p-4 border-2 border-[#E8D8C8] shadow-inner">
+                    <div id="active-postcard-sticker" class="absolute -bottom-3 -right-2 text-4xl drop-shadow select-none transform rotate-12 transition-transform">🎅</div>
+                    
+                    <div class="text-xs font-bold text-[#8D5B4C] border-b border-dashed border-[#D7C4B2] pb-1.5 mb-2 flex justify-between">
+                        <span>ถึง: ตัวฉันในคริสต์มาสปีหน้า ❄️</span>
+                        <span id="postcard-date" class="opacity-70">25 ธ.ค.</span>
+                    </div>
+
+                    <textarea id="postcard-message" rows="5" placeholder="สวัสดีตัวฉันในอนาคต... ขอบคุณที่ปีนี้สู้มาตลอดนะ คริสต์มาสปีนี้เราได้พักผ่อนและใจดีกับตัวเองมากๆ เลย..." 
+                        class="w-full bg-transparent text-[#4A3531] text-sm leading-relaxed focus:outline-none resize-none placeholder-[#B09A8E]"></textarea>
+                </div>
+
+                <!-- Save Postcard Footer -->
+                <div class="mt-4 flex items-center justify-between gap-2">
+                    <span id="postcard-saved-toast" class="text-xs font-bold text-[#528260] opacity-0 transition-opacity duration-300">
+                        ✨ บันทึกโปสการ์ดเรียบร้อยแล้ว!
+                    </span>
+                    <button onclick="savePostcard()" class="bg-[#E06D6D] hover:bg-[#D15858] text-white font-bold py-2.5 px-5 rounded-2xl text-sm shadow-md shadow-rose-200 transition transform active:scale-95 flex items-center gap-1.5 ml-auto">
+                        <span>📮 เก็บใส่กล่องความทรงจำ</span>
+                    </button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Cute Footer -->
+    <footer class="text-center mt-12 px-4 text-xs opacity-75 relative z-20">
+        <p>สร้างด้วยความอบอุ่นเพื่อค่ำคืนคริสต์มาสแสนพิเศษของคุณ 🎄🍪✨</p>
+    </footer>
+
+    <script>
+        /* ==========================================
+           1. DATA & INITIALIZATION
+        ========================================== */
+        const gachaIdeas = [
+            { cat: 'cozy', tag: '🧸 สายชิลล์อบอุ่น', title: 'ดูหนังคริสต์มาสมาราธอนใต้ผ้าห่มนุ่ม', desc: 'เปิดหนังฟีลกู๊ดอย่าง Klaus, The Holiday หรือ Home Alone พร้อมโกโก้ร้อนท็อปมาร์ชเมลโลว์' },
+            { cat: 'cozy', tag: '🧸 สายชิลล์อบอุ่น', title: 'จัดมินิปาร์ตี้อาหารจานโปรดให้ตัวเอง', desc: 'สั่งเมนูที่อยากกินมานาน หรือซื้อเค้กคริสต์มาสชิ้นเล็กๆ มาปักเทียนฉลองความเก่งของตัวเอง' },
+            { cat: 'cozy', tag: '🧸 สายชิลล์อบอุ่น', title: 'เปิดไฟ Fairy Lights และจุดเทียนหอม', desc: 'ปิดไฟเพดานดวงใหญ่ เปิดเฉพาะไฟสีวอร์มไวท์และเทียนหอมกลิ่นวานิลลาหรืออบเชย' },
+            { cat: 'soulful', tag: '🎨 สายฮีลใจสร้างสรรค์', title: 'วาดรูปหรือระบายสีการ์ดคริสต์มาส', desc: 'ลองวาดต้นคริสต์มาส ตุ๊กตาหิมะ หรือระบายสีภาพน่ารักๆ ปล่อยใจให้สบายแบบไม่ต้องรีบ' },
+            { cat: 'soulful', tag: '🎨 สายฮีลใจสร้างสรรค์', title: 'จัดอันดับความทรงจำดีๆ ตลอดปีนี้', desc: 'เปิดแกลเลอรีรูปในมือถือ เลือกรูปที่ยิ้มกว้างที่สุดของปีนี้มาดูและขอบคุณเรื่องราวดีๆ' },
+            { cat: 'soulful', tag: '🎨 สายฮีลใจสร้างสรรค์', title: 'เขียนจดหมายขอบคุณตัวเอง', desc: 'เขียนชมตัวเองในเรื่องที่ผ่านพ้นมาได้ในปีนี้ คุณเก่งมากๆ เลยนะที่เดินมาถึงตรงนี้' },
+            { cat: 'gamer', tag: '🎮 สายเกมเมอร์', title: 'เดินเล่นถ่ายรูปในเกมธีมหิมะ', desc: 'ล็อกอินเข้าเกมออนไลน์ที่ชอบ ไปเดินชมเมืองที่ตกแต่งต้นคริสต์มาสและเก็บไอเทมเทศกาล' },
+            { cat: 'gamer', tag: '🎮 สายเกมเมอร์', title: 'เปิดตี้ดูหนังหรือฟังเพลงใน Discord', desc: 'ชวนเพื่อนออนไลน์ที่อยู่คนเดียวเหมือนกันมาเปิดห้องแชร์หน้าจอดูหนังคริสต์มาสด้วยกัน' },
+            { cat: 'solo', tag: '🧣 สายเที่ยวคนเดียว', title: 'แต่งตัวโทนแดง-เขียวออกไปเดินดูไฟ', desc: 'ใส่ชุดที่มั่นใจที่สุด ออกไปเดินเล่นถ่ายรูปกับต้นคริสต์มาสยักษ์หรือคาเฟ่สวยๆ' },
+            { cat: 'solo', tag: '🧣 สายเที่ยวคนเดียว', title: 'เป็น Secret Santa ซื้อของขวัญให้ตัวเอง', desc: 'เดินเข้าร้านหนังสือหรือร้านของกุ๊กกิ๊ก เลือกของขวัญ 1 ชิ้น ให้ร้านห่อสวยๆ แล้วกลับมาแกะที่ห้อง' }
+        ];
+
+        const mascotQuotes = [
+            "เย้! ขอให้คืนนี้เป็นคืนที่ใจดีกับคุณที่สุดเลยนะ 🎄",
+            "อยู่คนเดียวก็อบอุ่นได้ แค่มีของอร่อยกับเพลงเพราะๆ 🍪",
+            "ปีนี้คุณเก่งมากๆ เลยนะ อย่าลืมกอดตัวเองแน่นๆ ล่ะ! 🧣",
+            "ลองเขย่ากล่องของขวัญดูสิ มีไอเดียน่ารักๆ ซ่อนอยู่เพียบเลย 🎁",
+            "ติ๊กถูกกิจกรรมเสร็จแล้ว อย่าลืมยิ้มให้กับความสุขเล็กๆ นะ ✨",
+            "กรุ๊งกริ๊ง~ ซานต้าฝากบอกว่าคุณสมควรได้รับความสุขที่สุด! 🔔"
+        ];
+
+        const christmasMovies = [
+            { genre: 'animation', genreLabel: '🧚 อนิเมชั่น / แฟนตาซี', year: '2019', icon: '✉️', title: 'Klaus (มหัศจรรย์ตำนานคริสต์มาส)', synopsis: 'เรื่องราวสุดซึ้งของบุรุษไปรษณีย์จอมขี้เกียจกับช่างทำของเล่นลึกลับในเมืองน้ำแข็ง ที่ร่วมกันจุดประกายตำนานซานตาคลอสขึ้นมาใหม่', snack: 'โกโก้ร้อนท็อปมาร์ชเมลโลว์นุ่มๆ ☕' },
+            { genre: 'romcom', genreLabel: '💕 อบอุ่นหัวใจ / รอมคอม', year: '2006', icon: '🏡', title: 'The Holiday (เดอะ ฮอลิเดย์ เซอร์ไพรส์รักวันพักร้อน)', synopsis: 'หญิงสาวสองคนจากคนละซีกโลกตัดสินใจแลกบ้านกันอยู่ช่วงคริสต์มาสเพื่อหนีความช้ำรัก จนได้พบกับความอบอุ่นครั้งใหม่ที่คาดไม่ถึง', snack: 'ไวน์อุ่นๆ หรือน้ำแอปเปิลร้อนหอมอบเชย 🍎' },
+            { genre: 'romcom', genreLabel: '💕 อบอุ่นหัวใจ / รอมคอม', year: '2003', icon: '💌', title: 'Love Actually (ทุกหัวใจมีรัก)', synopsis: 'หนังรักคริสต์มาสในตำนานที่ร้อยเรียงเรื่องราวความรักหลากหลายรูปแบบในลอนดอนช่วงเทศกาล ดูจบแล้วหัวใจพองโตแน่นอน', snack: 'ช็อกโกแลตทรัฟเฟิล & ชาร้อนหอมๆ 🍫' },
+            { genre: 'classic', genreLabel: '😂 ตลกเบาสมอง / คลาสสิก', year: '1990', icon: '🏠', title: 'Home Alone (โดดเดี่ยวผู้น่ารัก)', synopsis: 'เมื่อหนูน้อยเควินถูกครอบครัวลืมทิ้งไว้ที่บ้านคนเดียวช่วงคริสต์มาส เขาจึงต้องงัดสารพัดกับดักสุดแสบมาปราบโจรสองเกลอ!', snack: 'พิซซ่าชีสเยิ้มๆ & น้ำอัดลมเย็นฉ่ำ 🍕' },
+            { genre: 'romcom', genreLabel: '💕 อบอุ่นหัวใจ / รอมคอม', year: '2019', icon: '🎶', title: 'Last Christmas (ลาสต์ คริสต์มาส)', synopsis: 'หญิงสาวที่ชีวิตกำลังวุ่นวายและทำงานเป็นเอลฟ์ในร้านขายของคริสต์มาส ได้พบกับชายหนุ่มแสนดีที่เข้ามาเปลี่ยนมุมมองชีวิตของเธอไปตลอดกาล', snack: 'พายแอปเปิลอุ่นๆ เสิร์ฟคู่ไอศกรีมวานิลลา 🥧' },
+            { genre: 'animation', genreLabel: '🧚 อนิเมชั่น / แฟนตาซี', year: '2004', icon: '🚂', title: 'The Polar Express (เดอะ โพลาร์ เอ็กซ์เพรส)', synopsis: 'การผจญภัยสุดมหัศจรรย์ของเด็กชายบนรถไฟขบวนพิเศษที่มุ่งหน้าสู่ขั้วโลกเหนือในคืนคริสต์มาสอีฟ พร้อมเพลงประกอบสุดไพเราะ', snack: 'ช็อกโกแลตร้อนสูตรเข้มข้นแบบบนรถไฟ 🍫' },
+            { genre: 'animation', genreLabel: '🧚 อนิเมชั่น / แฟนตาซี', year: '2011', icon: '🎁', title: 'Arthur Christmas (ของขวัญจานด่วน ป่วนคริสต์มาส)', synopsis: 'เบื้องหลังภารกิจส่งของขวัญสุดไฮเทคของครอบครัวซานต้า เมื่อมีของขวัญตกหล่น 1 กล่อง ลูกชายคนเล็กจึงต้องออกเดินทางส่งให้ทันก่อนเช้า!', snack: 'คุกกี้รูปดาว & นมสดอุ่นๆ 🥛' },
+            { genre: 'animation', genreLabel: '🧚 อนิเมชั่น / แฟนตาซี', year: '2021', icon: '🦌', title: 'A Boy Called Christmas (เด็กชายชื่อคริสต์มาส)', synopsis: 'เด็กชายธรรมดาออกเดินทางฝ่าหิมะพร้อมเจ้าหนูคู่ใจและกวางเรนเดียร์ เพื่อตามหาหมู่บ้านเอลฟ์ในตำนานและนำความหวังกลับมา', snack: 'ซินนามอนโรลอบใหม่ร้อนๆ 🥐' },
+            { genre: 'romcom', genreLabel: '💕 อบอุ่นหัวใจ / รอมคอม', year: '2018', icon: '👑', title: 'The Princess Switch (เดอะ พริ้นเซส สวิตช์)', synopsis: 'สาวนักอบขนมชาวอเมริกันหน้าเหมือนว่าที่เจ้าหญิงแห่งราชวงศ์ยุโรปอย่างกับแกะ ทั้งคู่จึงแอบสลับตัวกันช่วงเทศกาลคริสต์มาสสุดป่วน', snack: 'คัพเค้กเรดเวลเวตแต่งหน้าคริสต์มาส 🧁' },
+            { genre: 'classic', genreLabel: '😂 ตลกเบาสมอง / คลาสสิก', year: '2022', icon: '🎩', title: 'Spirited (สปีริตคิดส์ คริสต์มาสป่วน)', synopsis: 'มิวสิคัลคอมเมดี้สุดอลังการที่ตีความเรื่อง A Christmas Carol ใหม่ เมื่อภูตคริสต์มาสเลือกดัดนิสัยหนุ่มจอมแสบแต่กลับโดนป่วนเสียเอง', snack: 'ป๊อปคอร์นคาราเมลกรุบกรอบ 🍿' },
+            { genre: 'classic', genreLabel: '😂 ตลกเบาสมอง / คลาสสิก', year: '2003', icon: '🧝', title: 'Elf (เอลฟ์ มหัศจรรย์เทวดาตัวบิ๊ก)', synopsis: 'มนุษย์หนุ่มร่างยักษ์ที่เติบโตมาในหมู่บ้านเอลฟ์ขั้วโลกเหนือ เดินทางเข้านิวยอร์กเพื่อตามหาพ่อแท้ๆ พร้อมพกความสดใสเต็มร้อย', snack: 'ขนมปังขิง & ลูกกวาดแคนดี้เคน 🍬' },
+            { genre: 'romcom', genreLabel: '💕 อบอุ่นหัวใจ / รอมคอม', year: '2020', icon: '🥂', title: 'Holidate (ฮอลิเดต)', synopsis: 'คนโสดสองคนที่เบื่อคำถามจากครอบครัวในวันหยุด จึงตกลงเป็นคู่ควงปลอมๆ เฉพาะวันเทศกาลตลอดทั้งปี จนความรู้สึกจริงเริ่มก่อตัว', snack: 'ชีสบอร์ด แครกเกอร์ & สปาร์กลิงจูซ 🥂' },
+            { genre: 'animation', genreLabel: '🧚 อนิเมชั่น / แฟนตาซี', year: '2018', icon: '🎅', title: 'The Christmas Chronicles (ผจญภัยพิทักษ์คริสต์มาส)', synopsis: 'สองพี่น้องแอบขึ้นรถเลื่อนของซานตาคลอสจนทำรถพัง! ทั้งคู่จึงต้องช่วยซานต้ากอบกู้คืนคริสต์มาสให้ทันก่อนเด็กๆ ทั่วโลกตื่น', snack: 'คุกกี้ช็อกโกแลตชิปชิ้นโต 🍪' },
+            { genre: 'romcom', genreLabel: '💕 อบอุ่นหัวใจ / รอมคอม', year: '2019', icon: '❄️', title: 'Let It Snow (เลต อิต สโนว์)', synopsis: 'พายุหิมะครั้งใหญ่ในคืนคริสต์มาสอีฟพัดพาให้กลุ่มวัยรุ่นในเมืองเล็กๆ ได้โคจรมาเจอกัน เกิดเป็นมิตรภาพและความรักสุดน่ารัก', snack: 'วาฟเฟิลอุ่นๆ ราดเมเปิลไซรัป 🧇' },
+            { genre: 'romcom', genreLabel: '💕 อบอุ่นหัวใจ / รอมคอม', year: '2020', icon: '📕', title: 'Dash & Lily (แดช แอนด์ ลิลลี่)', synopsis: 'เรื่องราวสุดคิวท์ของสองหนุ่มสาวที่สื่อสารและท้าทายกันผ่านสมุดโน้ตสีแดงที่ซ่อนไว้ตามมุมต่างๆ ของนิวยอร์กช่วงคริสต์มาส', snack: 'โดนัทเคลือบน้ำตาล & ชาเอิร์ลเกรย์ 🍩' }
+        ];
+
+        let currentGachaIdea = null;
+        let currentMovie = null;
+        let selectedMovieGenre = 'all';
+        let checklistItems = JSON.parse(localStorage.getItem('cozyXmasChecklist_v2')) || [
+            { text: 'ชงโกโก้ร้อน หรือเตรียมเครื่องดื่มแก้วโปรด ☕', done: false },
+            { text: 'เปิดเพลงกล่องดนตรีคริสต์มาสคลอเบาๆ 🎵', done: false },
+            { text: 'เขียนโปสการ์ดถึงตัวเองในคริสต์มาสปีหน้า 💌', done: false }
+        ];
+
+        let lightsOn = true;
+        let snowOn = true;
+        let nightCozy = false;
+
+        window.onload = () => {
+            buildFairyLights();
+            initSnowCanvas();
+            renderChecklist();
+            loadPostcard();
+        };
+
+        /* ==========================================
+           2. FAIRY LIGHTS, SNOW & AMBIENCE
+        ========================================== */
+        function buildFairyLights() {
+            const container = document.getElementById('fairy-lights-container');
+            const colors = ['bulb-red', 'bulb-gold', 'bulb-green', 'bulb-pink'];
+            const count = window.innerWidth < 640 ? 12 : 22;
+            container.innerHTML = '';
+            for (let i = 0; i < count; i++) {
+                const wrap = document.createElement('div');
+                wrap.className = 'bulb-wrap';
+                const colorClass = colors[i % colors.length];
+                wrap.innerHTML = `
+                    <div class="bulb-cap"></div>
+                    <div class="bulb ${colorClass} ${lightsOn ? '' : 'off'}"></div>
+                `;
+                container.appendChild(wrap);
+            }
+        }
+
+        function toggleLights() {
+            lightsOn = !lightsOn;
+            const bulbs = document.querySelectorAll('.bulb');
+            bulbs.forEach(b => lightsOn ? b.classList.remove('off') : b.classList.add('off'));
+            document.getElementById('btn-lights').innerText = lightsOn ? '💡 ไฟประดับ: เปิด' : '💡 ไฟประดับ: ปิด';
+        }
+
+        function toggleCozyMode() {
+            nightCozy = !nightCozy;
+            document.body.classList.toggle('night-cozy', nightCozy);
+            const btn = document.getElementById('btn-theme');
+            btn.innerText = nightCozy ? '☀️ โหมดกลางวันพาสเทล' : '🕯️ โหมดกลางคืนอบอุ่น';
+        }
+
+        // Smooth Snowfall Canvas
+        let snowflakes = [];
+        function initSnowCanvas() {
+            const canvas = document.getElementById('snow-canvas');
+            const ctx = canvas.getContext('2d');
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', () => {
+                resize();
+                buildFairyLights();
+            });
+            resize();
+
+            snowflakes = Array.from({ length: 55 }, () => ({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                r: Math.random() * 3.5 + 1.5,
+                d: Math.random() * 1 + 0.4,
+                drift: Math.random() * 1 - 0.5
+            }));
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                if (snowOn) {
+                    ctx.fillStyle = nightCozy ? 'rgba(255, 250, 240, 0.75)' : 'rgba(224, 109, 109, 0.28)';
+                    ctx.beginPath();
+                    snowflakes.forEach(f => {
+                        ctx.moveTo(f.x, f.y);
+                        ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+                    });
+                    ctx.fill();
+
+                    // Also draw soft white flakes
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
+                    ctx.beginPath();
+                    snowflakes.forEach((f, idx) => {
+                        if (idx % 2 === 0) {
+                            ctx.moveTo(f.x, f.y);
+                            ctx.arc(f.x, f.y, f.r * 0.9, 0, Math.PI * 2);
+                        }
+                        f.y += f.d;
+                        f.x += Math.sin(f.y * 0.01) * 0.5 + f.drift * 0.2;
+                        if (f.y > canvas.height) {
+                            f.y = -5;
+                            f.x = Math.random() * canvas.width;
+                        }
+                    });
+                    ctx.fill();
+                }
+                requestAnimationFrame(draw);
+            }
+            draw();
+        }
+
+        function toggleSnow() {
+            snowOn = !snowOn;
+            document.getElementById('btn-snow').innerText = snowOn ? '❄️ หิมะตก: เปิด' : '❄️ หิมะตก: ปิด';
+        }
+
+        // Click Sparkle Effect Anywhere
+        document.addEventListener('click', (e) => {
+            const emojis = ['✨', '❄️', '⭐', '🎄', '❤️'];
+            const sparkle = document.createElement('span');
+            sparkle.className = 'click-sparkle';
+            sparkle.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+            sparkle.style.left = e.clientX + 'px';
+            sparkle.style.top = e.clientY + 'px';
+            document.body.appendChild(sparkle);
+            setTimeout(() => sparkle.remove(), 800);
+        });
+
+        // Mascot Interaction
+        function petMascot() {
+            const speech = document.getElementById('mascot-speech');
+            const randomQuote = mascotQuotes[Math.floor(Math.random() * mascotQuotes.length)];
+            speech.innerText = randomQuote;
+            playSleighBellsChime();
+        }
+
+        /* ==========================================
+           3. CHRISTMAS GIFT GACHA
+        ========================================== */
+        function openGiftBox() {
+            const box = document.getElementById('gift-box-visual');
+            box.classList.remove('animate-gift-shake');
+            void box.offsetWidth; // trigger reflow
+            box.classList.add('animate-gift-shake');
+
+            playSleighBellsChime();
+
+            const selectedCat = document.getElementById('category-select').value;
+            const pool = selectedCat === 'all' ? gachaIdeas : gachaIdeas.filter(i => i.cat === selectedCat);
+
+            setTimeout(() => {
+                const chosen = pool[Math.floor(Math.random() * pool.length)];
+                currentGachaIdea = chosen;
+
+                document.getElementById('gacha-tag').innerText = chosen.tag;
+                document.getElementById('gacha-title').innerText = chosen.title;
+                document.getElementById('gacha-desc').innerText = chosen.desc;
+                document.getElementById('btn-add-gacha').disabled = false;
+            }, 300);
+        }
+
+        function addGachaToChecklist() {
+            if (!currentGachaIdea) return;
+            checklistItems.push({ text: currentGachaIdea.title + ' 🎁', done: false });
+            saveAndRenderChecklist();
+
+            const btn = document.getElementById('btn-add-gacha');
+            btn.innerHTML = '<span>✅ เพิ่มลงลิสต์แล้ว!</span>';
+            setTimeout(() => {
+                btn.innerHTML = '<span>➕ เพิ่มลงลิสต์ความสุข</span>';
+            }, 1300);
+        }
+
+        /* ==========================================
+           3.5 COZY CHRISTMAS CINEMA (MOVIE RANDOMIZER)
+        ========================================== */
+        function setMovieGenre(genre) {
+            selectedMovieGenre = genre;
+            document.querySelectorAll('.movie-filter-btn').forEach(btn => {
+                if (btn.dataset.genre === genre) {
+                    btn.className = 'movie-filter-btn bg-[#E06D6D] text-white font-bold px-3 py-1.5 rounded-xl text-xs shadow-sm transition active:scale-95';
+                } else {
+                    btn.className = 'movie-filter-btn bg-[#FFF5E4] text-[#4A3531] hover:bg-amber-100 border border-amber-200 font-semibold px-3 py-1.5 rounded-xl text-xs transition active:scale-95';
+                }
+            });
+            playNote(659.25, 0.1, 0.04);
+        }
+
+        function spinChristmasMovie() {
+            const popcorn = document.getElementById('popcorn-icon');
+            const ticketCard = document.getElementById('cinema-ticket-card');
+
+            popcorn.classList.remove('animate-popcorn');
+            void popcorn.offsetWidth;
+            popcorn.classList.add('animate-popcorn');
+
+            playSleighBellsChime();
+
+            const pool = selectedMovieGenre === 'all'
+                ? christmasMovies
+                : christmasMovies.filter(m => m.genre === selectedMovieGenre);
+
+            // Avoid repeating the exact same movie consecutively if pool > 1
+            let candidates = pool;
+            if (currentMovie && pool.length > 1) {
+                candidates = pool.filter(m => m.title !== currentMovie.title);
+            }
+
+            setTimeout(() => {
+                const chosen = candidates[Math.floor(Math.random() * candidates.length)];
+                currentMovie = chosen;
+
+                ticketCard.classList.remove('animate-ticket-pop');
+                void ticketCard.offsetWidth;
+                ticketCard.classList.add('animate-ticket-pop');
+
+                document.getElementById('movie-poster-icon').innerHTML = `
+                    <span class="text-4xl">${chosen.icon}</span>
+                    <span class="text-[10px] font-bold text-[#8D5B4C] mt-1">ADMIT ONE</span>
+                `;
+                document.getElementById('movie-genre-badge').innerText = chosen.genreLabel;
+                document.getElementById('movie-year-badge').innerText = `📅 ปี ${chosen.year}`;
+                document.getElementById('movie-title').innerText = chosen.title;
+                document.getElementById('movie-synopsis').innerText = chosen.synopsis;
+                document.getElementById('movie-snack').innerText = chosen.snack;
+                document.getElementById('btn-add-movie').disabled = false;
+            }, 220);
+        }
+
+        function addMovieToChecklist() {
+            if (!currentMovie) return;
+            checklistItems.push({ text: `ดูหนังเรื่อง: ${currentMovie.title} 🎬`, done: false });
+            saveAndRenderChecklist();
+
+            const btn = document.getElementById('btn-add-movie');
+            btn.innerHTML = '<span>✅ เพิ่มเข้าลิสต์แล้ว!</span>';
+            setTimeout(() => {
+                btn.innerHTML = '<span>เพิ่มเข้าลิสต์ความสุขคืนนี้ 🎬</span>';
+            }, 1300);
+        }
+
+        /* ==========================================
+           4. COZY CHECKLIST & JOY METER
+        ========================================== */
+        function renderChecklist() {
+            const container = document.getElementById('checklist-container');
+            container.innerHTML = '';
+
+            let completed = 0;
+            checklistItems.forEach((item, index) => {
+                if (item.done) completed++;
+
+                const li = document.createElement('li');
+                li.className = `flex items-center justify-between gap-3 px-3.5 py-2.5 rounded-2xl border transition-all ${
+                    item.done 
+                    ? 'bg-[#E8F5E9]/90 border-[#A5D6A7] text-[#5D7A64] line-through' 
+                    : 'bg-white/95 border-[#EFE2D3] text-[#4A3531] shadow-sm'
+                }`;
+
+                li.innerHTML = `
+                    <label class="flex items-center gap-3 cursor-pointer flex-1 select-none">
+                        <input type="checkbox" ${item.done ? 'checked' : ''} onchange="toggleTask(${index})" 
+                            class="w-5 h-5 accent-[#E06D6D] rounded-lg cursor-pointer">
+                        <span class="text-sm font-medium">${item.text}</span>
+                    </label>
+                    <button onclick="deleteTask(${index})" class="text-rose-300 hover:text-rose-600 text-sm font-bold px-2 py-0.5 rounded-lg transition" title="ลบรายการ">
+                        ✕
+                    </button>
+                `;
+                container.appendChild(li);
+            });
+
+            updateJoyMeter(completed, checklistItems.length);
+        }
+
+        function updateJoyMeter(completed, total) {
+            const pct = total === 0 ? 0 : Math.round((completed / total) * 100);
+            document.getElementById('joy-bar').style.width = pct + '%';
+            document.getElementById('joy-percentage').innerText = pct + '%';
+
+            const label = document.getElementById('joy-status-label');
+            if (pct === 0) label.innerText = '🌟 ระดับความสุขคริสต์มาส: เริ่มต้นความอบอุ่น';
+            else if (pct < 50) label.innerText = '🍪 ระดับความสุขคริสต์มาส: กำลังฟินเลย!';
+            else if (pct < 100) label.innerText = '🎄 ระดับความสุขคริสต์มาส: อบอุ่นหัวใจสุดๆ';
+            else label.innerText = '🎅 ระดับความสุขคริสต์มาส: เต็มเปี่ยม 100% ยอดเยี่ยม!';
+        }
+
+        function addCustomTask() {
+            const input = document.getElementById('new-task-input');
+            const val = input.value.trim();
+            if (!val) return;
+            checklistItems.push({ text: val, done: false });
+            input.value = '';
+            saveAndRenderChecklist();
+        }
+
+        function toggleTask(index) {
+            checklistItems[index].done = !checklistItems[index].done;
+            if (checklistItems[index].done) {
+                playNote(880, 0.15, 0.08); // cute ding sound
+            }
+            saveAndRenderChecklist();
+        }
+
+        function deleteTask(index) {
+            checklistItems.splice(index, 1);
+            saveAndRenderChecklist();
+        }
+
+        function saveAndRenderChecklist() {
+            localStorage.setItem('cozyXmasChecklist_v2', JSON.stringify(checklistItems));
+            renderChecklist();
+        }
+
+        /* ==========================================
+           5. WEB AUDIO API CHRISTMAS MUSIC BOX
+        ========================================== */
+        let audioCtx = null;
+        let isPlayingMusic = false;
+        let musicTimer = null;
+        let currentTrackIdx = 0;
+        let noteStep = 0;
+
+        // Frequencies for Music Box Notes
+        const NOTES = {
+            C4: 261.63, D4: 293.66, E4: 329.63, F4: 349.23, G4: 392.00, A4: 440.00, B4: 493.88,
+            C5: 523.25, D5: 587.33, E5: 659.25, F5: 698.46, G5: 783.99, A5: 880.00
+        };
+
+        const tracks = [
+            {
+                name: 'Jingle Bells (Music Box)',
+                tempo: 330,
+                melody: [
+                    ['E5',1], ['E5',1], ['E5',2],
+                    ['E5',1], ['E5',1], ['E5',2],
+                    ['E5',1], ['G5',1], ['C5',1.5], ['D5',0.5], ['E5',3], [null,1],
+                    ['F5',1], ['F5',1], ['F5',1.5], ['F5',0.5],
+                    ['F5',1], ['E5',1], ['E5',1], ['E5',0.5], ['E5',0.5],
+                    ['E5',1], ['D5',1], ['D5',1], ['E5',1], ['D5',2], ['G5',2]
+                ]
+            },
+            {
+                name: 'We Wish You a Merry Christmas',
+                tempo: 360,
+                melody: [
+                    ['D4',1], ['G4',1], ['G4',0.5], ['A4',0.5], ['G4',0.5], ['F4',0.5],
+                    ['E4',1], ['E4',1], ['E4',1],
+                    ['A4',1], ['A4',0.5], ['B4',0.5], ['A4',0.5], ['G4',0.5],
+                    ['F4',1], ['D4',1], ['D4',1],
+                    ['B4',1], ['B4',0.5], ['C5',0.5], ['B4',0.5], ['A4',0.5],
+                    ['G4',1], ['E4',1], ['D4',0.5], ['D4',0.5],
+                    ['E4',1], ['A4',1], ['F4',1], ['G4',2], [null,1]
+                ]
+            }
+        ];
+
+        function ensureAudioCtx() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+        }
+
+        function playNote(freq, duration = 0.4, vol = 0.1) {
+            if (!freq) return;
+            ensureAudioCtx();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+            // Soft music-box bell envelope
+            gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(vol, audioCtx.currentTime + 0.02);
+            gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration + 0.35);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start();
+            osc.stop(audioCtx.currentTime + duration + 0.4);
+        }
+
+        function playSleighBellsChime() {
+            ensureAudioCtx();
+            const bellFreqs = [1318.5, 1567.98, 2093.0, 2637.0];
+            bellFreqs.forEach((f, i) => {
+                setTimeout(() => playNote(f, 0.25, 0.045), i * 55);
+            });
+        }
+
+        function selectTrack(idx) {
+            currentTrackIdx = idx;
+            noteStep = 0;
+            document.getElementById('track-name').innerText = tracks[idx].name;
+
+            document.getElementById('track-btn-0').className = idx === 0 
+                ? 'flex-1 py-1.5 px-2 rounded-xl text-xs font-bold bg-[#E06D6D] text-white shadow-sm transition'
+                : 'flex-1 py-1.5 px-2 rounded-xl text-xs font-bold bg-white/80 text-[#4A3531] hover:bg-white transition';
+            document.getElementById('track-btn-1').className = idx === 1 
+                ? 'flex-1 py-1.5 px-2 rounded-xl text-xs font-bold bg-[#E06D6D] text-white shadow-sm transition'
+                : 'flex-1 py-1.5 px-2 rounded-xl text-xs font-bold bg-white/80 text-[#4A3531] hover:bg-white transition';
+
+            if (isPlayingMusic) {
+                clearTimeout(musicTimer);
+                scheduleNextNote();
+            }
+        }
+
+        function toggleMusicBox() {
+            isPlayingMusic = !isPlayingMusic;
+            const btn = document.getElementById('btn-play-music');
+            const disc = document.getElementById('music-disc');
+            const status = document.getElementById('music-status');
+
+            if (isPlayingMusic) {
+                ensureAudioCtx();
+                btn.innerHTML = '⏸️ หยุดเพลงชั่วคราว';
+                disc.classList.add('animate-spin');
+                disc.style.animationDuration = '4s';
+                status.innerText = 'กำลังบรรเลงเสียงกล่องดนตรี... 🎶';
+                scheduleNextNote();
+            } else {
+                clearTimeout(musicTimer);
+                btn.innerHTML = '▶️ เล่นกล่องดนตรี';
+                disc.classList.remove('animate-spin');
+                status.innerText = 'หยุดพักเสียงเพลงแล้ว';
+            }
+        }
+
+        function scheduleNextNote() {
+            if (!isPlayingMusic) return;
+            const track = tracks[currentTrackIdx];
+            const [noteName, beats] = track.melody[noteStep];
+            const durationSec = (beats * track.tempo) / 1000;
+
+            if (noteName && NOTES[noteName]) {
+                playNote(NOTES[noteName], durationSec, 0.09);
+            }
+
+            noteStep = (noteStep + 1) % track.melody.length;
+            musicTimer = setTimeout(scheduleNextNote, beats * track.tempo);
+        }
+
+        /* ==========================================
+           6. DEAR FUTURE ME POSTCARD
+        ========================================== */
+        let selectedSticker = '🎅';
+
+        function setPostcardSticker(emoji) {
+            selectedSticker = emoji;
+            document.getElementById('active-postcard-sticker').innerText = emoji;
+
+            document.querySelectorAll('.sticker-opt').forEach(btn => {
+                if (btn.innerText === emoji) {
+                    btn.classList.add('border-2', 'border-[#E06D6D]', 'scale-110');
+                } else {
+                    btn.classList.remove('border-2', 'border-[#E06D6D]', 'scale-110');
+                }
+            });
+            playNote(1046.5, 0.12, 0.05);
+        }
+
+        function savePostcard() {
+            const msg = document.getElementById('postcard-message').value;
+            const data = {
+                message: msg,
+                sticker: selectedSticker,
+                savedAt: new Date().toLocaleDateString('th-TH', { day: 'numeric', month: 'short', year: 'numeric' })
+            };
+            localStorage.setItem('cozyXmasPostcard_v2', JSON.stringify(data));
+
+            const toast = document.getElementById('postcard-saved-toast');
+            toast.style.opacity = '1';
+            playSleighBellsChime();
+            setTimeout(() => {
+                toast.style.opacity = '0';
+            }, 2800);
+        }
+
+        function loadPostcard() {
+            const saved = JSON.parse(localStorage.getItem('cozyXmasPostcard_v2'));
+            if (saved) {
+                document.getElementById('postcard-message').value = saved.message || '';
+                if (saved.sticker) setPostcardSticker(saved.sticker);
+                if (saved.savedAt) document.getElementById('postcard-date').innerText = saved.savedAt;
+            }
+        }
+    </script>
+</body>
+</html>
